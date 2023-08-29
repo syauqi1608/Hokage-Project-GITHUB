@@ -4,25 +4,23 @@ using UnityEngine;
 
 public class Paused : MonoBehaviour
 {
-    public GameObject Phone;
-
     [SerializeField] GameObject obj;
 
     public bool Active;
 
     private void Start()
     {
-        Phone.SetActive(false);
+        obj.SetActive(false);
     }
 
     private void Update()
     {
-        if (Input.GetButtonDown("Pause"))
+        if (Input.GetKeyDown(KeyCode.P))  //(Input.GetButtonDown("Pause"))
         {
             BukaTutup();
         }
 
-        if (Input.GetButtonDown("Back"))
+        if (Input.GetKeyDown(KeyCode.Backspace))
         {
             GameObject MenuAplikasi = GameObject.FindGameObjectWithTag("MenuAplikasi");
             if (MenuAplikasi != null) Destroy(MenuAplikasi);
